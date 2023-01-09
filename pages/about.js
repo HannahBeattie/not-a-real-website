@@ -1,7 +1,7 @@
 import { Container, Heading, HStack, Image, Stack, Text, Tooltip, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
 import React from 'react'
-import FadeIn from '~/components/animate/FadeIn'
+import FadeIn from '~/components/framerMotion/FadeIn'
 import MyLink from '~/components/base/MyLink'
 
 export default function About() {

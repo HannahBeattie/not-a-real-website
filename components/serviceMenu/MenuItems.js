@@ -1,8 +1,8 @@
 import { Box, Center, Grid, VStack } from '@chakra-ui/react'
 import MyLink from '../base/MyLink'
-import { useMediaQuery } from '../hooks/useMediaQuery'
-import Feature from '../layout/Feature'
-import Slide from './Slide'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
+import Feature from '../base/Feature'
+import Slide from '../base/Slide'
 
 export default function MenuItems() {
 	const cardProps = [

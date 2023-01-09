@@ -1,8 +1,8 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, Button, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import FadeIn from '../animate/FadeIn'
-import Nav from '../header/Nav'
+import FadeIn from '../framerMotion/FadeIn'
+import Nav from '../header/DesktopNav'
 import BigLogo from '../logo/BigLogo'
 
 export default function BaseLand() {

@@ -1,19 +1,14 @@
 import {
-	Box,
-	chakra,
 	HStack,
 	IconButton,
 	Spacer,
 	Text,
-	Tooltip,
 	useColorModeValue,
 	VisuallyHidden,
 	VStack,
 } from '@chakra-ui/react'
-import { AiFillGithub } from 'react-icons/ai'
 import { FaTwitter } from 'react-icons/fa'
 import { FiGithub } from 'react-icons/fi'
-import { RiMailOpenFill } from 'react-icons/ri'
 import MyLink from '../base/MyLink'
 
 export function SocialButton({ children, href, label }) {

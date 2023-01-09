@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { useState } from 'react'
 
-import MyLink from '../base/MyLink'
+import MyLink from './MyLink'
 
 export default function Feature({ alt, heading, text, label, href, buttonText, src }) {
 	const bg = useColorModeValue('white', 'gray.900')

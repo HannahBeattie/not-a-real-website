@@ -9,8 +9,8 @@ import {
 	VStack,
 } from '@chakra-ui/react'
 import { useState } from 'react'
-import Appear from '../animate/Appear'
-import MyLink from '../base/MyLink'
+import Appear from '../framerMotion/Appear'
+import MyLink from './MyLink'
 
 export default function Slide({ idx, title, sub, src, alt, href, buttonText, buttonText2 }) {
 	const isOdd = idx % 2

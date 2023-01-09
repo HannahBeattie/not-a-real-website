@@ -1,5 +1,5 @@
 import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react'
-import MyLink from '../base/MyLink'
+import MyLink from './MyLink'
 
 export default function DetailCard({ title, footnote, alt, src, description, href, extraNote }) {
 	return (

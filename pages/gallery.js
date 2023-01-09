@@ -1,7 +1,7 @@
 import { Container, Divider, Grid, GridItem, Heading, Text, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
-import FadeIn from '~/components/animate/FadeIn'
-import Feature from '~/components/layout/Feature'
+import FadeIn from '~/components/framerMotion/FadeIn'
+import Feature from '~/components/base/Feature'
 
 import { getStaticAlbumProps } from '~/components/lib/myContext'
 

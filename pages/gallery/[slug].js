@@ -1,8 +1,5 @@
-import { CloseIcon } from '@chakra-ui/icons'
 import {
 	Box,
-	Button,
-	Code,
 	Container,
 	Grid,
 	GridItem,
@@ -16,12 +13,12 @@ import {
 import Head from 'next/head'
 import { useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
-import Appear from '~/components/animate/Appear'
-import FadeIn from '~/components/animate/FadeIn'
+import Appear from '~/components/framerMotion/Appear'
+import FadeIn from '~/components/framerMotion/FadeIn'
 import MyLink from '~/components/base/MyLink'
-import getGridProps from '~/components/gallery/getGridProps'
-import { usePrevNext } from '~/components/hooks/usePrevNext'
-import { getAlbums, getGalleryBySlug } from '~/components/lib/api'
+import getGridProps from '~/hooks/getGridProps'
+import { usePrevNext } from '~/hooks/usePrevNext'
+import { getAlbums } from '~/components/lib/api'
 import { getStaticAlbumProps } from '~/components/lib/myContext'
 import { ImageModal, useImageModal } from '~/components/lib/useImageModal'
 

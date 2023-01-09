@@ -1,8 +1,6 @@
-import { Box } from '@chakra-ui/react'
 import Head from 'next/head'
-import Appear from '~/components/animate/Appear'
-import FadeIn from '~/components/animate/FadeIn'
-import Feature from '~/components/layout/Feature'
+import Appear from '~/components/framerMotion/Appear'
+import FadeIn from '~/components/framerMotion/FadeIn'
 import ServCard from '~/components/serviceMenu/MenuItems'
 import ServiceIntro from '~/components/serviceMenu/ServiceIntro'
 

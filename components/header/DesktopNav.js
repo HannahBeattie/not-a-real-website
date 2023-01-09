@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import MyLink from '../base/MyLink'
 import BaseNav from './BaseNav'
-import ColTog from './ColTog'
+import ColTog from './ToggleLight'
 import { NAV_ITEMS } from './NavItems'
 import Zlogo from '../logo/SmLogo'
 

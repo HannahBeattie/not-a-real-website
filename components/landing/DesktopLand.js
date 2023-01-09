@@ -1,15 +1,14 @@
 import { Box, Text, useColorModeValue, VStack } from '@chakra-ui/react'
+import Nav from '../header/DesktopNav'
+import ColTog from '../header/ToggleLight'
 import BigLogo from '../logo/BigLogo'
-import ColTog from '../header/ColTog'
-import Nav from '../header/Nav'
 import BaseLand from './BaseLand'
-import MyLink from '../base/MyLink'
 
 export default function LandingPage() {
 	// const soft = useColorModeValue('', 'blackAlpha.900')
 	const src = useColorModeValue('/landing/lgLght.jpg', '/landing/lgDark.jpg')
 	const textProps = {
-		letterSpacing: { md: '0.4em', lg: '1em' },
+		letterSpacing: { md: '0.2em', lg: '0.3em' },
 		fontSize: { md: 'sm', lg: 'sm' },
 		px: { md: 4 },
 		textAlign: 'center',
@@ -27,10 +26,6 @@ export default function LandingPage() {
 
 	return (
 		<>
-			<VStack flex={'1'} alignItems='stretch' display={{ base: 'flex', md: 'none' }}>
-				<BaseLand />
-			</VStack>
-
 			<VStack flex={'1'} alignItems='stretch' display={{ md: 'flex', base: 'none' }}>
 				<VStack {...stackProps} spacing={'0'} alignItems='stretch' position='relaitve'>
 					<VStack
@@ -72,7 +67,8 @@ export default function LandingPage() {
 
 					<VStack flex={1} justifyContent='center'>
 						<Text py={'100'} {...textProps}>
-							Not a real website: Dynamic routing w headless CMS
+							This app uses dynamic routing to display content hosted on a headless
+							CMS
 						</Text>
 					</VStack>
 				</VStack>

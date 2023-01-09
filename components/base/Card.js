@@ -11,9 +11,9 @@ import {
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
-import MyLink from '../base/MyLink'
+import MyLink from './MyLink'
 
-import { useMediaQuery } from '../hooks/useMediaQuery'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 export default function Card({ title, sub, desc, href, src, alt, width, lgTitle }) {
 	let isPageWide = useMediaQuery('(min-width: 768px)')

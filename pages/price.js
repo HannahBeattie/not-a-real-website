@@ -1,12 +1,9 @@
 import {
 	Box,
-	color,
 	Container,
 	Heading,
 	HStack,
 	Icon,
-	Spacer,
-	Stack,
 	Table,
 	Tbody,
 	Td,
@@ -16,9 +13,7 @@ import {
 } from '@chakra-ui/react'
 import Head from 'next/head'
 import { AiOutlineCamera } from 'react-icons/ai'
-import { BsFillInfoCircleFill } from 'react-icons/bs'
 import { MdOutlineComputer } from 'react-icons/md'
-import MyLink from '~/components/base/MyLink'
 
 export default function Price() {
 	const services = [

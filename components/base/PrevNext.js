@@ -1,7 +1,7 @@
 import { HStack, Spacer, Text } from '@chakra-ui/react'
-import MyLink from '../base/MyLink'
+import MyLink from './MyLink'
 
-import { usePrevNext } from '../hooks/usePrevNext'
+import { usePrevNext } from '../../hooks/usePrevNext'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 
 export default function PrevNext() {

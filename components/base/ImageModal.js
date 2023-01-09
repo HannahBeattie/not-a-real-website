@@ -16,7 +16,7 @@ import {
 import { useCallback, useEffect, useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { MdFullscreen, MdFullscreenExit } from 'react-icons/md'
-import FadeIn from '~/components/animate/FadeIn'
+import FadeIn from '~/components/framerMotion/FadeIn'
 
 export default function ImageViewer({ items }) {
 	const { isOpen, onOpen, onClose } = useDisclosure()

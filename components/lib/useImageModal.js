@@ -17,7 +17,7 @@ import {
 import { useCallback, useEffect, useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { MdFullscreen, MdFullscreenExit } from 'react-icons/md'
-import { useMediaQuery } from '../hooks/useMediaQuery'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 export function useImageModal({ items, alt }) {
 	const { isOpen, onOpen, onClose } = useDisclosure()

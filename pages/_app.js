@@ -1,16 +1,12 @@
 import { ChakraProvider, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
 import Footer from '~/components/header/Footer'
-import Nav from '~/components/header/Nav'
+import Nav from '~/components/header/DesktopNav'
 import { MyProvider } from '~/components/lib/myContext'
 import { theme } from '~/styles/theme'
 import '../styles/main.css'
 
 function MyApp({ Component, pageProps, router }) {
-	// console.log('<MyApp> pageProps keys:', Object.keys(pageProps))
-	// console.log('router is', router.pathname)
-	// const router = useRouter()
-	// console.log('router is', router.asPath)
 	const { albums } = pageProps ?? {}
 	const mainWrapProps = Component.shrinkage
 		? {

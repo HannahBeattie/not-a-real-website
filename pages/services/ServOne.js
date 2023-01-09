@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import FadeIn from '~/components/animate/FadeIn'
+import FadeIn from '~/components/framerMotion/FadeIn'
 import { serviceOne } from '~/components/services/Detals'
 
 import ServLayout from '~/components/services/ServLayout'

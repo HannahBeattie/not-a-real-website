@@ -12,8 +12,6 @@ import {
 	HStack,
 	Icon,
 	IconButton,
-	Image,
-	Spacer,
 	useColorModeValue,
 	useDisclosure,
 	VStack,
@@ -22,7 +20,7 @@ import { FiMenu } from 'react-icons/fi'
 import MyLink from '../base/MyLink'
 import SmLogo from '../logo/SmLogo'
 
-import ColTog from './ColTog'
+import ColTog from './ToggleLight'
 import { NAV_ITEMS } from './NavItems'
 
 const LinkItems = NAV_ITEMS
