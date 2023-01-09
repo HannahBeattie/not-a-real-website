@@ -59,6 +59,9 @@ export default function Footer(props) {
 					© Not real website.
 					<i> All Rights reserved</i>. Nah, just kidding, you can borrow.
 				</Text>
+				<MyLink fontSize={'xs'} href='https://github.com/HannahBeattie'>
+					Link for credit
+				</MyLink>
 
 				<Text fontSize={'xs'} textAlign={'start'} display={{ base: 'none', md: 'inherit' }}>
 					Images from pexels

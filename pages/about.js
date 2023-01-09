@@ -1,4 +1,4 @@
-import { Container, Heading, HStack, Image, Stack, Text, VStack } from '@chakra-ui/react'
+import { Container, Heading, HStack, Image, Stack, Text, Tooltip, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
 import React from 'react'
 import FadeIn from '~/components/animate/FadeIn'
@@ -52,31 +52,37 @@ export default function About() {
 					<VStack bg={'gray.900'} alignItems='stretch'>
 						<Container
 							px={{ base: 8, sm: 4 }}
-							py={{ base: 8, sm: 8 }}
+							py={{ base: 8, md: 8 }}
 							maxW={'xl'}
 							fontSize={{ med: 'xl', base: 'l' }}
 							color='gray.100'
-							_dark={{ color: 'gray.200' }}
+							_dark={{ color: 'gray.100' }}
 						>
-							<VStack alignItems={'stretch'}>
-								<Text>
-									Welcome to Not a real website, an application that uses NEXT.js
-									and Contentful, a headless CMS, to demonstrate how these tools
-									may be used for something that is a real website.
+							<VStack alignItems={'stretch'} spacing={4}>
+								<Text fontSize={'xl'}>
+									Welcome to <i>Not a real websit</i>; an application that uses
+									NEXT.js and{' '}
+									<Tooltip cursor={'pointer'} label='a headless CMS'>
+										Contentful*
+									</Tooltip>{' '}
+									to demonstrate how these tools may be used for something that{' '}
+									<i>is</i> a real website.
 								</Text>
-								<Text>
+								<Text fontWeight={'light'}>
 									If you navigate to the gallery page, you will find albums that
 									are dynamically routed from Contentful, using the query language
 									GraphQL.
 								</Text>
 
-								<Text>
+								<Text fontWeight={'light'}>
 									I have also sprinkled this application with whimsical styling,
 									such as a light-to-dark toggle, that switches the mood of the
 									website from daytime to party time.
 								</Text>
-								<Text>All the images used on this site are from pexels.</Text>
-								<Text>
+								<Text fontWeight={'light'}>
+									All the images used on this site are from pexels.
+								</Text>
+								<Text fontWeight={'light'}>
 									You can view the source code <MyLink href={''}>here</MyLink>. To
 									use this template with your own headless CMS, follow the
 									instructions in the readme.
