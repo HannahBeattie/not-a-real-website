@@ -1,4 +1,14 @@
-import { Container, Heading, HStack, Image, Stack, Text, Tooltip, VStack } from '@chakra-ui/react'
+import {
+	Container,
+	Divider,
+	Heading,
+	HStack,
+	Image,
+	Stack,
+	Text,
+	Tooltip,
+	VStack,
+} from '@chakra-ui/react'
 import Head from 'next/head'
 import React from 'react'
 import FadeIn from '~/components/framerMotion/FadeIn'
@@ -12,7 +22,7 @@ export default function About() {
 			</Head>
 			<FadeIn>
 				<Stack
-					spacing={{ base: 0, md: 8 }}
+					spacing={{ base: 4, md: 8 }}
 					direction={{ base: 'column', md: 'row' }}
 					py={{ sm: 0, md: 8 }}
 					px={{ base: 0, md: '100' }}
@@ -21,7 +31,7 @@ export default function About() {
 						maxW={'sm'}
 						color='gray.900'
 						_dark={{ color: 'gray.200' }}
-						py={{ base: 8, md: 0 }}
+						py='0'
 						px={{ base: 8, md: 0 }}
 						alignSelf={'center'}
 						justify={'center'}
@@ -51,16 +61,16 @@ export default function About() {
 				<VStack spacing={'10'} alignItems='stretch'>
 					<VStack bg={'gray.900'} alignItems='stretch'>
 						<Container
-							px={{ base: 8, sm: 4 }}
-							py={{ base: 8, md: 8 }}
+							px={{ base: 4, sm: 4 }}
+							py={{ base: 4, md: 8 }}
 							maxW={'xl'}
 							fontSize={{ med: 'xl', base: 'l' }}
 							color='gray.100'
 							_dark={{ color: 'gray.100' }}
 						>
-							<VStack alignItems={'stretch'} spacing={4}>
+							<VStack alignItems={'stretch'} spacing={4} p={2}>
 								<Text fontSize={'xl'}>
-									Welcome to <i>Not a real websit</i>; an application that uses
+									Welcome to <i>Not a real website</i>- An application that uses
 									NEXT.js and{' '}
 									<Tooltip cursor={'pointer'} label='a headless CMS'>
 										Contentful*
@@ -68,6 +78,9 @@ export default function About() {
 									to demonstrate how these tools may be used for something that{' '}
 									<i>is</i> a real website.
 								</Text>
+								<Divider />
+								<Heading fontWeight={'light'}>Details</Heading>
+
 								<Text fontWeight={'light'}>
 									If you navigate to the gallery page, you will find albums that
 									are dynamically routed from Contentful, using the query language
@@ -79,13 +92,18 @@ export default function About() {
 									such as a light-to-dark toggle, that switches the mood of the
 									website from daytime to party time.
 								</Text>
-								<Text fontWeight={'light'}>
-									All the images used on this site are from pexels.
-								</Text>
+
+								<Divider />
+								<Heading fontWeight={'light'}>Source Code</Heading>
 								<Text fontWeight={'light'}>
 									You can view the source code <MyLink href={''}>here</MyLink>. To
 									use this template with your own headless CMS, follow the
 									instructions in the readme.
+								</Text>
+								<Divider />
+								<Heading fontWeight={'light'}>Attribution</Heading>
+								<Text fontWeight={'light'}>
+									All images used are from pexels.com
 								</Text>
 							</VStack>
 						</Container>
