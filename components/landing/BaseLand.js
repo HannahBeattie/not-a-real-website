@@ -70,9 +70,9 @@ export default function BaseLand() {
 						color: 'gray.300',
 					}}
 					textAlign='center'
-					maxW='18em'
+					maxW={{ base: '26em', sm: '30em' }}
 				>
-					Website demo feat. headless CMS & dynamic routing
+					A Next application featuring a headless CMS & dynamic routing
 				</Text>
 
 				<FadeIn transition={{ duration: 1.3, delay: 0.6 }}>

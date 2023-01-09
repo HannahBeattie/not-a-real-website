@@ -3,6 +3,7 @@ import BigLogo from '../logo/BigLogo'
 import ColTog from '../header/ColTog'
 import Nav from '../header/Nav'
 import BaseLand from './BaseLand'
+import MyLink from '../base/MyLink'
 
 export default function LandingPage() {
 	// const soft = useColorModeValue('', 'blackAlpha.900')
@@ -10,6 +11,8 @@ export default function LandingPage() {
 	const textProps = {
 		letterSpacing: { md: '0.4em', lg: '1em' },
 		fontSize: { md: 'sm', lg: 'sm' },
+		px: { md: 4 },
+		textAlign: 'center',
 		color: useColorModeValue('hsla(181, 70%, 100%, 0.23)', 'yellow.500'),
 		top: '500',
 	}

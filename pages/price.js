@@ -1,9 +1,11 @@
 import {
 	Box,
+	color,
 	Container,
 	Heading,
 	HStack,
 	Icon,
+	Spacer,
 	Stack,
 	Table,
 	Tbody,
@@ -112,35 +114,30 @@ export default function Price() {
 				<title>Price List</title>
 			</Head>
 
-			<VStack alignItems='stretch' spacing={0} maxW='6xl' alignSelf='center'>
-				<Stack
-					px={{ base: 0, md: 8 }}
-					py={{ base: 0, md: 8 }}
-					alignItems='flex-start'
-					justifyContent={{
-						md: 'space-between',
+			<VStack alignItems='stretch' spacing={4} py={4} maxW='6xl' alignSelf='center'>
+				<VStack
+					width={{
+						base: '100%',
+						md: '50%',
 					}}
-					direction={{
-						base: 'column',
-						md: 'row',
-					}}
+					px={{ base: 4, md: 0 }}
+					textAlign={{ base: 'center', md: 'start' }}
+					alignItems='stretch'
+					flex={'1'}
+					m={0}
 				>
-					<VStack
-						width={{
-							base: '100%',
-							md: '50%',
-						}}
-						px={{ base: 4, md: 0 }}
-						pt={{ base: 4, md: 0 }}
-						textAlign={'left'}
-						alignItems='flex-start'
-						m={0}
+					<Heading size={'xl'} textAlign={{ base: 'center', med: 'auto' }}>
+						Example of a
+					</Heading>
+					<Heading
+						size={'xl'}
+						textAlign={{ base: 'center', med: 'auto' }}
+						color='teal.400'
+						_dark={{ color: 'teal.400' }}
 					>
-						<Heading size={'xl'}>
-							Example of a <Text color='teal.400'>Price List</Text>
-						</Heading>
-					</VStack>
-				</Stack>
+						Price List
+					</Heading>
+				</VStack>
 
 				<Table fontFamily={'body'} size='sm' borderTopWidth={1}>
 					<Tbody>
@@ -170,7 +167,7 @@ export default function Price() {
 												key={`svc-${idx}-${ii}-h`}
 												display={{ base: 'table-row', md: 'none' }}
 											>
-												<Td pt={8}>{heading}</Td>
+												<Td pt={{ md: 8, base: 2 }}>{heading}</Td>
 												<Td />
 											</Tr>
 										)
@@ -237,12 +234,11 @@ export default function Price() {
 						fontSize={'md'}
 						color={'teal'}
 						bg={'grayAlpha.100'}
-						px={'4'}
-						py={'2'}
+						px={{ base: '4', md: 0 }}
 						borderRadius={'xl'}
 						borderColor={'teal'}
 						border={'1px'}
-						my={{ sm: 8, base: 4 }}
+						py={{ base: '0', md: '6' }}
 					>
 						At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
 					</Text>
