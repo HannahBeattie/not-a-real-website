@@ -54,8 +54,12 @@ export default function Footer(props) {
 					© Not real website.
 					<i> All Rights reserved</i>. Nah, just kidding, you can borrow.
 				</Text>
-				<MyLink fontSize={'xs'} href='https://github.com/HannahBeattie'>
-					Link for credit
+				<MyLink
+					textDecoration={'underline'}
+					fontSize={'xs'}
+					href='https://github.com/HannahBeattie'
+				>
+					Use this link to credit me
 				</MyLink>
 
 				<Text fontSize={'xs'} textAlign={'start'} display={{ base: 'none', md: 'inherit' }}>
@@ -66,17 +70,11 @@ export default function Footer(props) {
 			<VStack alignItems={'stretch'} spacing={'4'}>
 				<HStack>
 					<Spacer />
-					<SocialButton label={'Twitter'} href={'https://twitter.com'} target='blank'>
-						<FaTwitter />
-					</SocialButton>
 
 					<SocialButton label={'contact'} href={'https://github.com/HannahBeattie'}>
 						<FiGithub />
 					</SocialButton>
 				</HStack>
-				<Text fontSize={'10'} display={{ base: 'none', md: 'block' }}>
-					Code by hannah bee
-				</Text>
 			</VStack>
 		</HStack>
 	)

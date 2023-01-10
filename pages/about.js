@@ -75,35 +75,28 @@ export default function About() {
 									<Tooltip cursor={'pointer'} label='a headless CMS'>
 										Contentful*
 									</Tooltip>{' '}
-									to demonstrate how these tools may be used for something that{' '}
-									<i>is</i> a real website.
+									to demonstrate how these tools could be used for something that
+									<i> is</i> a real website.
 								</Text>
 								<Divider />
 								<Heading fontWeight={'light'}>Details</Heading>
-
 								<Text fontWeight={'light'}>
 									If you navigate to the gallery page, you will find albums that
-									are dynamically routed from Contentful, using the query language
-									GraphQL.
+									are dynamically routed from Contentful, using Next.js router and
+									the query language GraphQL.
 								</Text>
-
 								<Text fontWeight={'light'}>
-									I have also sprinkled this application with whimsical styling,
-									such as a light-to-dark toggle, that switches the mood of the
-									website from daytime to party time.
+									Toggle the light and dark mode to take this website from daytime
+									to party time.
 								</Text>
-
 								<Divider />
 								<Heading fontWeight={'light'}>Source Code</Heading>
 								<Text fontWeight={'light'}>
-									You can view the source code <MyLink href={''}>here</MyLink>. To
-									use this template with your own headless CMS, follow the
-									instructions in the readme.
-								</Text>
-								<Divider />
-								<Heading fontWeight={'light'}>Attribution</Heading>
-								<Text fontWeight={'light'}>
-									All images used are from pexels.com
+									You can view the source code{' '}
+									<MyLink textDecoration={'underline'} href={''}>
+										here
+									</MyLink>
+									.
 								</Text>
 							</VStack>
 						</Container>
