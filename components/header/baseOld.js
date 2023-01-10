@@ -10,16 +10,17 @@ import {
 	DrawerContent,
 	Flex,
 	HStack,
+	Icon,
 	IconButton,
-	Text,
+	Spacer,
 	useColorModeValue,
 	useDisclosure,
 	VStack,
 } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import MyLink from '../base/MyLink'
-import ColTog from '../base/ToggleMode'
 import SmLogo from '../logo/SmLogo'
+import ColTog from '../base/ToggleMode'
 import { NAV_ITEMS } from './NavItems'
 
 const LinkItems = NAV_ITEMS
@@ -49,6 +50,7 @@ export default function BaseNav({ hideLogo }) {
 
 const SidebarContent = ({ onClose }) => {
 	const containerProps = {
+		bg: useColorModeValue('white', 'gray.900'),
 		w: 'full',
 		h: 'full',
 		spacing: 0,
@@ -57,29 +59,33 @@ const SidebarContent = ({ onClose }) => {
 		overflowY: 'auto',
 	}
 	const topBarProps = {
-		justifyContent: 'space-between',
-		alignItems: 'flex-start',
-		mx: '4',
-		py: 4,
-	}
-	const amendMarginProps = {
-		ml: '4',
+		pageYOffset: 4,
+		px: 4,
 	}
 	return (
 		<VStack {...containerProps} role='group'>
-			<HStack {...topBarProps} {...amendMarginProps}>
+			<HStack
+				{...topBarProps}
+				// h='20'
+				// alignItems='flex-start'
+				// ml='8'
+				// mt='4'
+				// mr='4'
+				// justifyContent='space-between'
+			>
 				<SmLogo />
+				<Spacer />
 				<CloseButton onClick={onClose} />
 			</HStack>
 			{LinkItems.map((link, idx) =>
 				link.children ? (
 					<Accordion allowToggle variant='unstyled' key={`nav-link-${idx}`}>
 						<AccordionItem>
-							<AccordionButton {...amendMarginProps}>
-								<Text as={'div'}>{link.label}</Text>
-								<AccordionIcon ml={2} />
+							<AccordionButton py='4' px='8'>
+								<Box textAlign='left'>{link.label}</Box>
+								<AccordionIcon ml='3' />
 							</AccordionButton>
-							<AccordionPanel>
+							<AccordionPanel bg='gray.200' _dark={{ bg: 'gray.700' }}>
 								{link.children.map(({ href, label }, idx) => (
 									<MyLink
 										href={href}
@@ -111,43 +117,53 @@ const SidebarContent = ({ onClose }) => {
 }
 
 const NavItem = ({ icon, children, href, ...rest }) => {
-	const itemProps = {
-		align: 'center',
-		pl: '4',
-		mx: '4',
-		py: '2',
-
-		cursor: 'pointer',
-	}
-
 	return (
-		<Flex {...itemProps} {...rest}>
+		<Flex
+			outline={null}
+			border={null}
+			align='center'
+			px='4'
+			mx='4'
+			borderRadius='lg'
+			cursor='pointer'
+			{...rest}
+		>
+			{icon && (
+				<Icon
+					mr='4'
+					fontSize='16'
+					_groupHover={{
+						color: 'white',
+					}}
+					as={icon}
+				/>
+			)}
 			{children}
 		</Flex>
 	)
 }
 
 const MobileNav = ({ onOpen, hideLogo }) => {
-	const iconProps = {
-		fontSize: { base: '2xl', med: '2xl' },
-
-		bg: 'whiteAlpha.500',
-		color: 'black',
-		variant: 'outline',
-		rounded: 'lg',
-		_light: {
-			borderColor: hideLogo ? 'blackAlpha.500' : undefined,
-		},
-		_dark: {
-			bg: 'gray.900',
-			color: 'white',
-		},
-		_focus: { base: { bg: useColorModeValue('#F18F01', 'red.600') } },
-		ariaLabel: 'open menu',
-	}
 	return (
 		<HStack justifyContent='space-between'>
-			<IconButton {...iconProps} onClick={onOpen} icon={<FiMenu />} />
+			<IconButton
+				fontSize={{ base: '2xl', med: '2xl' }}
+				onClick={onOpen}
+				bg={'whiteAlpha.500'}
+				color='black'
+				variant={'outline'}
+				rounded={'lg'}
+				_light={{
+					borderColor: hideLogo ? 'blackAlpha.500' : undefined,
+				}}
+				_dark={{
+					bg: 'gray.900',
+					color: 'white',
+				}}
+				_focus={{ base: { bg: useColorModeValue('#F18F01', 'red.600') } }}
+				aria-label='open menu'
+				icon={<FiMenu />}
+			/>
 			<HStack spacing='6'>
 				<ColTog />
 				{!hideLogo && <SmLogo />}

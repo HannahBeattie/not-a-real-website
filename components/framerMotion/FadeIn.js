@@ -1,8 +1,5 @@
 import { motion } from 'framer-motion'
 
-const generateKey = (pre) => {
-	return `${pre}_${new Date().getTime()}`
-}
 export default function FadeIn({ children, transition }) {
 	return (
 		<motion.div
