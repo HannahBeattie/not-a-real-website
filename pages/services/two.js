@@ -4,7 +4,7 @@ import { serviceTwo } from '~/components/services/Detals'
 import ServLayout from '~/components/services/ServLayout'
 export { getStaticAlbumProps as getStaticProps } from '~/components/lib/myContext'
 
-export default function ServTwo() {
+export default function Two() {
 	const props = serviceTwo
 	return (
 		<>

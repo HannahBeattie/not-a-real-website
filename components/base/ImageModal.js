@@ -20,11 +20,10 @@ import FadeIn from '~/components/framerMotion/FadeIn'
 
 export default function ImageViewer({ items }) {
 	const { isOpen, onOpen, onClose } = useDisclosure()
-
 	const [selected, setSelected] = useState(0)
-
 	const [modalSize, setModalSize] = useState('full')
-
+	const selectedItem = items[selected]
+	const clickedIcon = modalSize === 'lg' ? <MdFullscreen /> : <MdFullscreenExit />
 	const toggleModalSize = useCallback(
 		() => setModalSize(modalSize === 'lg' ? 'full' : 'lg'),
 		[modalSize]
@@ -40,7 +39,6 @@ export default function ImageViewer({ items }) {
 		}
 		setSelected(sel)
 	}, [selected, items.length])
-
 	useEffect(() => {
 		const keyPressed = ({ key }) =>
 			key === 'ArrowLeft' ? setPrev() : key === 'ArrowRight' && setNext()
@@ -48,20 +46,69 @@ export default function ImageViewer({ items }) {
 		return () => window.removeEventListener('keydown', keyPressed)
 	}, [setPrev, setNext])
 
-	const selectedItem = items[selected]
-	const clickedIcon = modalSize === 'lg' ? <MdFullscreen /> : <MdFullscreenExit />
+	const imgProps = {
+		w: '100%',
+		h: '100%',
+		flex: '1',
+
+		borderRadius: 'md',
+		cursor: { md: 'pointer' },
+		boxShadow: 'dark',
+	}
+	const overlayProps = {
+		bg: 'blackAlpha.800',
+		backdropFilter: 'blur(5px) grayscale(100%)',
+	}
+	const modalProps = {
+		bg: 'black',
+		color: 'white',
+		display: 'flex',
+		alignItems: 'stretch',
+		flexDirection: 'column',
+		maxH: '100vh',
+	}
+	const modalBodyProps = {
+		display: 'flex',
+		flex: 1,
+		flexDir: 'row',
+		alignItems: 'center',
+		justifyContent: 'center',
+		position: 'static',
+		p: 0,
+	}
+	const reSizeButton = {
+		fontSize: '2xl',
+		bg: 'null',
+		color: modalSize === 'lg' ? 'whiteAlpha.700' : 'whiteAlpha.600',
+		_hover: { bg: 'null' },
+		_active: { bg: 'null' },
+		mt: '-1rem',
+		ml: '-1rem',
+		icon: clickedIcon,
+		ariaLabel: 'next button',
+	}
+	const modelImgProps = {
+		fit: 'contain',
+		w: '100%',
+		h: '100%',
+		maxH: 'calc(100vh - 11rem)',
+	}
+
+	const prevNextProps = {
+		_hover: { bg: 'null' },
+		_active: { bg: 'null' },
+		fontSize: 'l',
+		size: 'lg',
+		bg: 'null',
+		color: 'white',
+	}
 
 	return (
-		<FadeIn>
+		<>
 			{items.map(({ title, src, ...rest }, idx) => (
 				<Image
+					{...imgProps}
 					key={`photo-${idx}`}
-					borderRadius={'md'}
-					w='100%'
-					cursor={{ md: 'pointer' }}
-					boxShadow={'dark'}
-					h='100%'
-					flex='1'
 					alt={title}
 					src={src[idx]}
 					fit='cover'
@@ -73,60 +120,21 @@ export default function ImageViewer({ items }) {
 			))}
 
 			<Modal onClose={onClose} isOpen={isOpen && !!selectedItem} isCentered size={modalSize}>
-				<ModalOverlay bg='blackAlpha.800' backdropFilter='blur(5px) grayscale(100%)' />
-
-				<ModalContent
-					bg={'black'}
-					color={'white'}
-					display='flex'
-					alignItems='stretch'
-					flexDirection='column'
-					maxH='100vh'
-				>
+				<ModalOverlay {...overlayProps} />
+				<ModalContent {...modalProps}>
 					<ModalHeader>
-						<IconButton
-							aria-label='next button'
-							fontSize={'2xl'}
-							bg={''}
-							color={modalSize === 'lg' ? 'whiteAlpha.700' : 'whiteAlpha.600'}
-							_hover={{ bg: '' }}
-							_active={{ bg: '' }}
-							onClick={toggleModalSize}
-							mt={'-1rem'}
-							ml={'-1rem'}
-							icon={clickedIcon}
-						/>
+						<IconButton {...reSizeButton} onClick={toggleModalSize} />
 					</ModalHeader>
 
 					<ModalCloseButton />
-					<ModalBody
-						display='flex'
-						flex='1'
-						flexDir='row'
-						alignItems='center'
-						justifyContent='center'
-						position='static'
-						p={0}
-					>
-						<Image
-							w='100%'
-							h='100%'
-							maxH='calc(100vh - 11rem)'
-							alt={selectedItem.title}
-							src={selectedItem.url}
-							fit='contain'
-						/>
+					<ModalBody {...modalBodyProps}>
+						<Image alt={selectedItem.title} src={selectedItem.url} {...modelImgProps} />
 					</ModalBody>
 					<ModalFooter>
 						<HStack justifyContent={'stretch'} flex={'1'}>
 							<IconButton
-								_hover={{ bg: '' }}
-								_active={{ bg: '' }}
+								{...prevNextProps}
 								aria-label='previous button'
-								fontSize={'l'}
-								size='lg'
-								bg={''}
-								color={'white'}
 								icon={<FaArrowLeft />}
 								onClick={setPrev}
 							/>
@@ -136,11 +144,8 @@ export default function ImageViewer({ items }) {
 							<Spacer />
 
 							<IconButton
-								_hover={{ bg: '' }}
-								_active={{ bg: '' }}
+								{...prevNextProps}
 								aria-label='next button'
-								fontSize={'l'}
-								bg={''}
 								icon={<FaArrowRight />}
 								onClick={setNext}
 							/>
@@ -148,6 +153,6 @@ export default function ImageViewer({ items }) {
 					</ModalFooter>
 				</ModalContent>
 			</Modal>
-		</FadeIn>
+		</>
 	)
 }

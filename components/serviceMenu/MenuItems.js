@@ -1,6 +1,4 @@
-import { Box, Center, Grid, VStack } from '@chakra-ui/react'
-import MyLink from '../base/MyLink'
-import { useMediaQuery } from '../../hooks/useMediaQuery'
+import { Grid, VStack } from '@chakra-ui/react'
 import Feature from '../base/Feature'
 import Slide from '../base/Slide'
 
@@ -12,7 +10,7 @@ export default function MenuItems() {
 			src: '/serMenu/01.jpg',
 			buttonText: 'Tell me more',
 			alt: 'image alt',
-			href: '/services/servOne',
+			href: '/services/one',
 			label: 'label',
 		},
 		{
@@ -21,7 +19,7 @@ export default function MenuItems() {
 			src: '/serMenu/02.jpg',
 			buttonText: 'Tell me more',
 			alt: 'image alt',
-			href: '/services/servTwo',
+			href: '/services/two',
 			label: 'label',
 		},
 	]

@@ -77,10 +77,7 @@ export const serviceOne = {
 		{ name: 'Item', price: '$540' },
 		{ name: 'Item', price: '$900' },
 	],
-	extras: [
-		{ name: 'Item', price: '$90' },
-		{ name: 'Item', price: '$60' },
-	],
+	details: [{ name: 'Item' }, { name: 'Item' }],
 	ofNote: 'A little note about a thing',
 	houseKeepingIsShort: false,
 	houseKeeping: (
@@ -157,10 +154,7 @@ export const serviceTwo = {
 		{ name: 'Item', price: '$540' },
 		{ name: 'Item', price: '$900' },
 	],
-	extras: [
-		{ name: 'Item', price: '$90' },
-		{ name: 'Item', price: '$60' },
-	],
+	details: [{ name: 'Item' }, { name: 'Item' }],
 	ofNote: 'A little note about a thing',
 	houseKeepingIsShort: true,
 	houseKeeping: (

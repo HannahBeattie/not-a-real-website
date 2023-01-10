@@ -8,7 +8,9 @@ export default function SmLogo() {
 	return (
 		<>
 			<MyLink href={'/'}>
-				<Heading fontFamily={'Lobster Two'}>NO</Heading>
+				<Heading _dark={{ fontFamily: 'Lobster Two' }} fontFamily={'Lobster Two'}>
+					NO
+				</Heading>
 			</MyLink>
 		</>
 	)

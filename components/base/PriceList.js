@@ -4,13 +4,13 @@ import {
 	List,
 	ListItem,
 	Spacer,
-	Stack,
 	StackDivider,
 	Text,
 	useColorModeValue,
+	VStack,
 } from '@chakra-ui/react'
 
-export default function PriceList({ ofNote, services, extras }) {
+export default function PriceList({ ofNote, services, details }) {
 	const sections = []
 	if (services) {
 		sections.push({
@@ -18,46 +18,46 @@ export default function PriceList({ ofNote, services, extras }) {
 			items: services,
 		})
 	}
-	if (extras) {
+	if (details) {
 		sections.push({
-			title: 'Extras',
-			items: extras,
+			title: 'Details',
+			items: details,
 		})
 	}
+	const vStackProps = {
+		alignItems: 'stretch',
+		flex: '1',
+		divider: <StackDivider borderColor={useColorModeValue('gray.200', 'gray.600')} />,
+	}
+	const textProps = {
+		fontSize: { base: '16px', lg: '18px' },
+		color: 'yellow.500',
+		_dark: { color: 'gray.100' },
+		textTransform: 'uppercase',
+		flex: 1,
+		p: '1',
+	}
+	const hstackProps = {
+		flex: 1,
+		p: '1',
+		alignItems: 'stretch',
+	}
+
 	return (
-		<Stack
-			flex={'1'}
-			py={{ base: 10, md: '4' }}
-			alignContent={'stretch'}
-			spacing={{ base: 4, sm: 8 }}
-			direction={'column'}
-			divider={<StackDivider borderColor={useColorModeValue('gray.200', 'gray.600')} />}
-		>
+		<VStack {...vStackProps}>
 			{sections.map(({ title, items }, idx) => (
 				<Box key={`pl-${idx}`}>
-					<Text
-						fontSize={{ base: '16px', lg: '18px' }}
-						color='yellow.500'
-						_dark={{ color: 'gray.100' }}
-						textTransform={'uppercase'}
-						mb={'4'}
-					>
-						{title}
-					</Text>
+					<Text {...textProps}>{title}</Text>
 					{items.map(({ name, price }, ii) => (
-						<List key={`service-${idx}-${ii}`} flex={1} display={'flex'}>
+						<List key={`service-${idx}-${ii}`}>
 							<HStack
-								as={ListItem}
-								flex={1}
+								{...hstackProps}
 								bg={ii % 2 ? 'grayAlpha.200' : undefined}
-								py='1'
-								px='2'
+								as={ListItem}
 							>
-								<Text as={'span'} fontSize='md'>
-									{name}
-								</Text>
+								<Text as={'span'}>{name}</Text>
 								<Spacer />
-								<Text fontSize='md'>{price}</Text>
+								<Text>{price}</Text>
 							</HStack>
 						</List>
 					))}
@@ -65,21 +65,12 @@ export default function PriceList({ ofNote, services, extras }) {
 			))}
 			{ofNote && (
 				<>
-					<Text
-						fontSize={{ base: '16px', lg: '18px' }}
-						color='yellow.500'
-						_dark={{ color: 'gray.100' }}
-						fontWeight={'500'}
-						textTransform={'uppercase'}
-						mb={'4'}
-					>
-						Note
-					</Text>
-					<Box mb={'4'} as={'span'} fontWeight={'light'} fontSize={'sm'}>
+					<Text {...textProps}>Note</Text>
+					<Text {...hstackProps} as={'span'}>
 						{ofNote}
-					</Box>
+					</Text>
 				</>
 			)}
-		</Stack>
+		</VStack>
 	)
 }

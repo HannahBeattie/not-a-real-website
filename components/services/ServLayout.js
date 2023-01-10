@@ -29,7 +29,7 @@ const gutter = { base: 8, md: 12 }
 
 function Disclose({ title, children }) {
 	return (
-		<AccordionItem>
+		<AccordionItem flex={'1'} alignItems={'stretch'}>
 			<AccordionButton alignItems='center' justifyContent='center'>
 				<Heading
 					fontSize={{ base: '2xl', md: '3xl' }}
@@ -43,17 +43,15 @@ function Disclose({ title, children }) {
 					</HStack>
 				</Heading>
 			</AccordionButton>
-			<AccordionPanel px={gutter}>
-				<Container p={0}>
-					<VStack
-						alignItems='stretch'
-						spacing={4}
-						pt={{ base: 2, md: 4 }}
-						pb={{ base: 4, md: 8 }}
-					>
-						{children}
-					</VStack>
-				</Container>
+			<AccordionPanel px={gutter} flex={'1'} alignItems={'stretch'}>
+				<VStack
+					alignItems='stretch'
+					spacing={4}
+					pt={{ base: 2, md: 4 }}
+					pb={{ base: 4, md: 8 }}
+				>
+					{children}
+				</VStack>
 			</AccordionPanel>
 		</AccordionItem>
 	)
@@ -86,7 +84,7 @@ export default function ServLayout({
 	children,
 	ofNote,
 	services,
-	extras,
+	details,
 }) {
 	const childs = Array.isArray(children) ? children : [children]
 	return (
@@ -177,10 +175,7 @@ export default function ServLayout({
 					}}
 					rowSpan={{ [break1]: houseKeepingIsShort ? 1 : 2 }}
 				>
-					<Accordion
-						// defaultIndex={[0]}
-						allowMultiple
-					>
+					<Accordion allowMultiple>
 						<Disclose title={'Specs'}>{houseKeeping}</Disclose>
 
 						{provided && (
@@ -190,8 +185,8 @@ export default function ServLayout({
 						)}
 
 						<Disclose title={'Price List'}>
-							{extras && (
-								<PriceList ofNote={ofNote} extras={extras} services={services} />
+							{details && (
+								<PriceList ofNote={ofNote} details={details} services={services} />
 							)}
 						</Disclose>
 					</Accordion>

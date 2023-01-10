@@ -6,7 +6,7 @@ import ServLayout from '~/components/services/ServLayout'
 
 export { getStaticAlbumProps as getStaticProps } from '~/components/lib/myContext'
 
-export default function ServOne() {
+export default function One() {
 	const props = serviceOne
 
 	return (

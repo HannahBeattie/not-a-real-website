@@ -4,8 +4,8 @@ export const NAV_ITEMS = [
 		label: 'services',
 		children: [
 			{ label: 'all services', href: '/services' },
-			{ label: 'service One', href: '/services/servOne' },
-			{ label: 'service Two', href: '/services/servTwo' },
+			{ label: 'service One', href: '/services/one' },
+			{ label: 'service Two', href: '/services/two' },
 		],
 	},
 	{ label: 'gallery', href: '/gallery' },
