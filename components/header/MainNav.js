@@ -17,39 +17,38 @@ import BaseNav from './BaseNav'
 import ColTog from '../base/ToggleMode'
 import { NAV_ITEMS } from './NavItems'
 import Zlogo from '../logo/SmLogo'
+import { SP } from 'next/dist/shared/lib/utils'
 
-export default function Nav({ hideLogo, hideToggle, ...rest }) {
+export default function MainNav({ hideLogo, hideToggle, ...rest }) {
+	const stackProps = {
+		alignItems: 'stretch',
+		textTransform: 'uppercase',
+		bg: 'white',
+		color: 'gray.600',
+		borderBottom: '1px',
+		borderStyle: 'solid',
+		borderColor: 'gray.200',
+		_dark: {
+			bg: 'gray.800',
+			color: 'white',
+			borderColor: 'gray.900',
+		},
+		px: { base: 4, md: 4 },
+		py: { base: 3, md: 2 },
+	}
 	return (
-		<VStack
-			alignItems='stretch'
-			textTransform={'uppercase'}
-			justifyContent='center'
-			bg={'white'}
-			color='gray.600'
-			borderBottom={1}
-			borderStyle='solid'
-			borderColor='gray.200'
-			_dark={{
-				bg: 'gray.800',
-				color: 'white',
-				borderColor: 'gray.900',
-			}}
-			px={{ base: 4, md: 4 }}
-			pt={{ base: 1, md: 4 }}
-			pb={{ base: 3, md: 4 }}
-			{...rest}
-		>
+		<VStack {...stackProps} {...rest}>
 			<HStack
 				alignItems={'center'}
 				justifyContent={'space-between'}
 				display={{ base: 'none', md: 'flex' }}
 			>
-				<Box minW='3rem'>{!hideLogo && <Zlogo />}</Box>
+				<Box>{!hideLogo && <Zlogo />}</Box>
 				<Spacer />
 				<DesktopNav />
 				<Spacer />
 				{!hideToggle && (
-					<Box minW='3rem'>
+					<Box pl='2'>
 						<ColTog />
 					</Box>
 				)}
@@ -62,11 +61,11 @@ export default function Nav({ hideLogo, hideToggle, ...rest }) {
 
 const DesktopNav = () => {
 	return (
-		<Stack direction={'row'} spacing={{ md: 3, lg: '8' }}>
+		<HStack>
 			{NAV_ITEMS.map((navItem, idx) => (
 				<DesktopNavItem {...navItem} key={`nav-item-${idx}`} />
 			))}
-		</Stack>
+		</HStack>
 	)
 }
 
@@ -74,11 +73,11 @@ const useNavLinkProps = () => {
 	const linkColor = useColorModeValue('gray.700', 'gray.200')
 	const linkHoverColor = useColorModeValue('orange.800', 'white')
 	return {
-		p: 3,
 		fontSize: 'sm',
 		fontWeight: 500,
 		color: linkColor,
-		rounded: 'sm',
+		px: '4',
+		py: '2',
 		_hover: {
 			textDecoration: 'none',
 			color: linkHoverColor,

@@ -1,7 +1,7 @@
 import { ChakraProvider, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
 import Footer from '~/components/header/Footer'
-import Nav from '~/components/header/DesktopNav'
+import Nav from '~/components/header/MainNav'
 import { MyProvider } from '~/components/lib/myContext'
 import { theme } from '~/styles/theme'
 import '../styles/main.css'

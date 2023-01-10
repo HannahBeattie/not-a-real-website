@@ -5,17 +5,17 @@ export default function ToggleMode({ col }) {
 	const { colorMode, toggleColorMode } = useColorMode()
 	const buttonProps = {
 		fontSize: { base: '2xl', med: '2xl' },
-		color: useColorModeValue('gray.600', 'white'),
+		_dark: { color: 'white' },
 		bg: {
-			base: useColorModeValue('whiteAlpha.600', 'blackAlpha.400'),
+			base: useColorModeValue('gray.900', 'blackAlpha.800'),
 			md: useColorModeValue('gray.200', 'gray.700'),
 		},
 		_active: {
-			bg: useColorModeValue('red.600', '#F18F01'),
+			bg: useColorModeValue('teal.400', 'teal'),
 			color: 'white',
 		},
 		_hover: {
-			bg: useColorModeValue('red.600', '#F18F01'),
+			bg: useColorModeValue('teal.400', 'teal'),
 			color: 'white',
 		},
 	}
@@ -25,7 +25,7 @@ export default function ToggleMode({ col }) {
 			{...buttonProps}
 			isRound
 			aria-label={`Switch to ${colorMode === 'light' ? 'dark' : 'light'} theme`}
-			icon={colorMode === 'light' ? <HiLightBulb /> : <sGoLightBulb />}
+			icon={<HiLightBulb />}
 			onClick={() => {
 				toggleColorMode()
 			}}
