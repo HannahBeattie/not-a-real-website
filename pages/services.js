@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import Appear from '~/components/framerMotion/Appear'
 import FadeIn from '~/components/framerMotion/FadeIn'
-import ServCard from '~/components/serviceMenu/MenuItems'
-import ServiceIntro from '~/components/serviceMenu/ServiceIntro'
+import ServCard from '~/components/serviceMenu/ServMenu'
 
 export default function Services() {
 	return (
@@ -13,7 +12,6 @@ export default function Services() {
 			</Head>
 			<FadeIn>
 				<Appear>
-					<ServiceIntro />
 					<ServCard />
 				</Appear>
 			</FadeIn>

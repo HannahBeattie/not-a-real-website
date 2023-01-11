@@ -33,16 +33,15 @@ export default function Feature({ alt, heading, text, label, href, buttonText, s
 	}
 
 	const ImgProps = {
-		h: '300',
 		fit: 'Cover',
+		width: '100%',
+		height: '100%',
 		borderTopRadius: 'md',
 	}
 
 	const contentProps = {
-		spacing: 2,
-		p: 6,
-		align: 'stretch',
 		flex: 1,
+		py: 4,
 	}
 	const albTitleProps = {
 		color: 'teal.400',

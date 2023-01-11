@@ -1,8 +1,4 @@
 export async function fetchGraphQL(query, preview = false) {
-	// console.log(
-	//  '[fetchGraphQL] Using token:',
-	//  preview ? processCONTENTFUL_PREVIEW_ACCESS_TOKEN : process.env.CONTENTFUL_ACCESS_TOKEN
-	// )
 	return fetch(
 		`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
 		{

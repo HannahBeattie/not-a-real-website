@@ -4,6 +4,7 @@ import {
 	Heading,
 	HStack,
 	Icon,
+	Spacer,
 	Table,
 	Tbody,
 	Td,
@@ -109,7 +110,13 @@ export default function Price() {
 				<title>Price List</title>
 			</Head>
 
-			<VStack alignItems='stretch' spacing={4} py={4} maxW='6xl' alignSelf='center'>
+			<VStack
+				alignItems='stretch'
+				spacing={4}
+				py={{ sm: 4, md: '8' }}
+				maxW='6xl'
+				alignSelf='center'
+			>
 				<VStack
 					width={{
 						base: '100%',
@@ -223,7 +230,7 @@ export default function Price() {
 					</Tbody>
 				</Table>
 
-				<Container alignSelf='center'>
+				<Container alignSelf='center' py={{ md: 4 }}>
 					<Text
 						textAlign={'center'}
 						fontSize={'md'}
@@ -233,7 +240,7 @@ export default function Price() {
 						borderRadius={'xl'}
 						borderColor={'teal'}
 						border={'1px'}
-						py={{ base: '0', md: '6' }}
+						py={{ base: '2', md: '6' }}
 					>
 						At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
 					</Text>

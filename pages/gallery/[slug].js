@@ -20,12 +20,11 @@ import getGridProps from '~/hooks/getGridProps'
 import { usePrevNext } from '~/hooks/usePrevNext'
 import { getAlbums } from '~/components/lib/api'
 import { getStaticAlbumProps } from '~/components/lib/myContext'
-import { ImageModal, useImageModal } from '~/components/lib/useImageModal'
+import { ImageModal, useImageModal } from '~/hooks/useImageModal'
 
 export async function getStaticProps(context) {
-	console.log('<Gallery> getStaticProps:', context)
+	// console.log('<Gallery> getStaticProps:', context)
 	const { slug } = context.params
-	// const gallery = await getGalleryBySlug(slug)
 	const { props } = await getStaticAlbumProps()
 	const { albums } = props
 	const gallery = albums.find((aa) => aa.slug === slug)
@@ -39,7 +38,7 @@ export async function getStaticPaths() {
 	const paths = albums.map((album) => ({
 		params: { slug: album.slug },
 	}))
-	console.log('<Gallery/[slug/]> getStaticPaths:', paths)
+	// console.log('<Gallery/[slug/]> getStaticPaths:', paths)
 	return {
 		paths,
 		fallback: false,
@@ -47,7 +46,7 @@ export async function getStaticPaths() {
 }
 
 export default function Gallery({ albums, gallery }) {
-	console.log('albums is:', { albums }, 'gallery is', { gallery })
+	// console.log('albums is:', { albums }, 'gallery is', { gallery })
 	if (typeof window !== 'undefined') {
 		window.gallery = gallery
 	}

@@ -19,7 +19,7 @@ export default function Gallery({ albums }) {
 			</Head>
 
 			<FadeIn>
-				<VStack spacing={'0'} mt={{ base: 4, md: 8 }} spacing={{ base: 4, sm: 8 }}>
+				<VStack mt={{ base: 4, md: 8 }} spacing={{ base: 4, sm: 8 }}>
 					<Heading
 						fontSize={{ base: '5xl', md: '7xl' }}
 						pb={{ base: '4', sm: '6', lg: '4' }}
@@ -40,7 +40,7 @@ export default function Gallery({ albums }) {
 					>
 						{albums?.map((album, idx) => {
 							const cover = album.imageCollection?.items?.length
-								? album.imageCollection?.items[0]
+								? album.imageCollection?.items[3]
 								: null
 							return (
 								<GridItem key={`album-${idx}`} w={'100%'} h={'100%'}>

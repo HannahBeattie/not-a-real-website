@@ -1,7 +1,6 @@
 import { Heading, VStack } from '@chakra-ui/react'
-import React from 'react'
 
-function BigLogo() {
+export default function BigLogo() {
 	const headProps = {
 		fontSize: { base: '5xl', sm: '7xl' },
 		fontFamily: 'Lobster Two',
@@ -15,5 +14,3 @@ function BigLogo() {
 		</VStack>
 	)
 }
-
-export default BigLogo
