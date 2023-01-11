@@ -35,7 +35,7 @@ export default function Footer() {
 		borderColor: 'grayAlpha.300',
 		fontWeight: '300',
 		_dark: { bg: 'whiteAlpha.100' },
-		pb: { base: 4, md: 0 },
+		pb: { base: 4, sm: 2, md: 4 },
 	}
 	const vstackProps = {
 		alignItems: 'stretch',

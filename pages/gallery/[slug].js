@@ -72,27 +72,10 @@ export default function Gallery({ albums, gallery }) {
 					{title}
 				</Heading>
 				<Container>
-					<VStack
-						spacing={2}
-						textAlign={'left'}
-						alignItems={'stretch'}
-						color={'grayAlpha.800'}
-						fontStyle={'italic'}
-					>
+					<VStack>
 						<Text>
-							This page is dynamically routed. It utalises GraphQl (a query library),
-							Contentful (a headless CMS) & Next.js router.
-						</Text>
-						<Text>
-							The images are stored on Contentful, in an album with a unique slug.
-						</Text>
-						<Text>
-							GraphQl requests all the albums I have stored on contentful and creates
-							a page for each slug it finds.
-						</Text>
-						<Text>
-							It passes the images, titles and image alts into a page template I
-							created, using the slug to create an api endpoint.
+							This text is the same on every album page, because there is only one
+							template. However, the images and title are dynamically rendered.
 						</Text>
 					</VStack>
 				</Container>

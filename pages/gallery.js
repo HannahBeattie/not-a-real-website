@@ -19,24 +19,37 @@ export default function Gallery({ albums }) {
 			</Head>
 
 			<FadeIn>
-				<VStack mt={{ base: 4, md: 8 }} spacing={{ base: 4, sm: 8 }}>
-					<Heading
-						fontSize={{ base: '5xl', md: '7xl' }}
-						pb={{ base: '4', sm: '6', lg: '4' }}
-						_dark={{ color: 'red.600', fontFamily: 'lora' }}
-					>
-						Albums
-					</Heading>
-
+				<VStack py={'8'} spacing={16}>
+					<Container align={'center'}>
+						<Heading
+							pb={4}
+							fontSize={{ base: '5xl', md: '7xl' }}
+							_dark={{ color: 'red.600', fontFamily: 'lora' }}
+						>
+							Albums
+						</Heading>
+						<VStack flex={'1'} align={'stretch'} spacing='4'>
+							<Text>
+								These albums use content stored on a CMS, that is dynamically routed
+								using NEXT.js router.
+							</Text>
+							<Text>
+								Qraphql is used to query contenful, the headless CMS. Contenful
+								passes our application the unique SLUG of each album, and that slug
+								is used to generate static url paths.
+							</Text>
+							<Text>
+								The images belonging to the unique slug are displayed at that
+								locaton, using a waiting layout template that I created earlier.
+							</Text>
+						</VStack>
+					</Container>
 					<Grid
 						templateColumns={{
 							base: 'repeat(1, 1fr)',
 							md: 'repeat(2, 1fr)',
 						}}
 						gap={{ md: 8, base: '4' }}
-						py={{ base: '8', md: '0' }}
-						pt={{ md: '0' }}
-						px={{ base: '4', md: '8', lg: '0' }}
 					>
 						{albums?.map((album, idx) => {
 							const cover = album.imageCollection?.items?.length
@@ -57,7 +70,6 @@ export default function Gallery({ albums }) {
 							)
 						})}
 					</Grid>
-					<Divider py={{ md: '8' }} />
 				</VStack>
 			</FadeIn>
 		</>
