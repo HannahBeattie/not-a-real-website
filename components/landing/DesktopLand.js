@@ -27,7 +27,7 @@ export default function LandingPage() {
 		top: '500',
 	}
 	const blurBoxProps = {
-		p: 8,
+		p: 100,
 		justify: 'center',
 		_light: { backdropFilter: 'auto', backdropBlur: '2px', bg: 'whiteAlpha.400' },
 		_dark: { backdropFilter: 'auto', backdropBlur: '7px', bg: 'blackAlpha.800' },

@@ -18,10 +18,9 @@ import {
 	Text,
 	VStack,
 } from '@chakra-ui/react'
-import Link from 'next/link'
-import PriceList from '../base/PriceList'
-import PrevNext from '../base/PrevNext'
 import MyLink from '../base/MyLink'
+import PrevNext from '../base/PrevNext'
+import PriceList from '../base/PriceList'
 
 const break1 = 'lg'
 const break2 = '2xl'
