@@ -46,7 +46,7 @@ export default function Feature({ alt, heading, text, label, href, buttonText, s
 	}
 	const albTitleProps = {
 		color: 'teal.400',
-		testTransform: 'uppercase',
+		textTransform: 'uppercase',
 		fontWeight: 800,
 		fontSize: 'sm',
 		letterSpacing: '0.1em',

@@ -62,14 +62,19 @@ export default function About() {
 					<VStack bg={'gray.900'} alignItems='stretch'>
 						<Container
 							px={{ base: 4, sm: 4 }}
-							py={{ base: 4, md: 8 }}
+							py={{ base: 2, md: 8 }}
 							maxW={'xl'}
 							fontSize={{ med: 'xl', base: 'l' }}
 							color='gray.100'
 							_dark={{ color: 'gray.100' }}
 						>
-							<VStack alignItems={'stretch'} spacing={4} p={2}>
-								<Text fontSize={'xl'}>
+							<VStack
+								alignItems={'stretch'}
+								spacing={{ md: 4, base: 2 }}
+								p={2}
+								py={{ base: 4, md: 0 }}
+							>
+								<Text fontSize={'xl'} pb={{ base: '2', md: 0 }}>
 									Welcome to <i>Not a real website</i>- An application that uses
 									NEXT.js and{' '}
 									<Tooltip cursor={'pointer'} label='a headless CMS'>

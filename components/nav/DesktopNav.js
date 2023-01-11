@@ -6,18 +6,15 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 	Spacer,
-	Stack,
-	Text,
 	useBreakpointValue,
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
 import MyLink from '../base/MyLink'
-import BaseNav from './BaseNav'
 import ColTog from '../base/ToggleMode'
-import { NAV_ITEMS } from './NavItems'
 import Zlogo from '../logo/SmLogo'
-import { SP } from 'next/dist/shared/lib/utils'
+import BaseNav from './BaseNav'
+import { NAV_ITEMS } from './NavItems'
 
 export default function DesktopNav({ hideLogo, hideToggle, ...rest }) {
 	const stackProps = {
@@ -33,8 +30,8 @@ export default function DesktopNav({ hideLogo, hideToggle, ...rest }) {
 			color: 'white',
 			borderColor: 'gray.900',
 		},
-		px: { base: 4, md: 4 },
-		py: { base: 3, md: 2 },
+		px: { base: 2, md: 4 },
+		py: { base: 0, md: 2 },
 	}
 	return (
 		<VStack {...stackProps} {...rest}>

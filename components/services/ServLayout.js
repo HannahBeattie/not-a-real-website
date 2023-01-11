@@ -21,6 +21,7 @@ import {
 import Link from 'next/link'
 import PriceList from '../base/PriceList'
 import PrevNext from '../base/PrevNext'
+import MyLink from '../base/MyLink'
 
 const break1 = 'lg'
 const break2 = '2xl'
@@ -98,14 +99,14 @@ export default function ServLayout({
 				<GridItem order='-1' colSpan={{ [break1]: 2 }} px={gutter} mt={2}>
 					<Breadcrumb separator={<ChevronRightIcon />}>
 						<BreadcrumbItem>
-							<Link href='/' passHref>
+							<MyLink href='/'>
 								<BreadcrumbLink>Home</BreadcrumbLink>
-							</Link>
+							</MyLink>
 						</BreadcrumbItem>
 						<BreadcrumbItem>
-							<Link href='/services' passHref>
+							<MyLink href='/services'>
 								<BreadcrumbLink>Services</BreadcrumbLink>
-							</Link>
+							</MyLink>
 						</BreadcrumbItem>
 						<BreadcrumbItem>
 							<BreadcrumbLink isCurrentPage>{pageBreadcrumb ?? page}</BreadcrumbLink>

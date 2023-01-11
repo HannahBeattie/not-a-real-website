@@ -143,12 +143,11 @@ const MobileNav = ({ onOpen, hideLogo }) => {
 			color: 'white',
 		},
 		_focus: { base: { bg: useColorModeValue('#F18F01', 'red.600') } },
-		ariaLabel: 'open menu',
 	}
 	return (
-		<HStack justifyContent='space-between'>
-			<IconButton {...iconProps} onClick={onOpen} icon={<FiMenu />} />
-			<HStack spacing='6'>
+		<HStack justifyContent='space-between' flex={'1'} mb={2}>
+			<IconButton {...iconProps} aria-label='open menu' onClick={onOpen} icon={<FiMenu />} />
+			<HStack spacing='4'>
 				<ColTog />
 				{!hideLogo && <SmLogo />}
 			</HStack>

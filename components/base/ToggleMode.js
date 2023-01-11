@@ -7,15 +7,15 @@ export default function ToggleMode({ col }) {
 		fontSize: { base: '2xl', med: '2xl' },
 		_dark: { color: 'white' },
 		bg: {
-			base: useColorModeValue('gray.900', 'blackAlpha.800'),
+			base: useColorModeValue('gray.100', 'gray.900'),
 			md: useColorModeValue('gray.200', 'gray.700'),
 		},
 		_active: {
-			bg: useColorModeValue('teal.400', 'teal'),
+			bg: useColorModeValue('teal.400', 'gray.800'),
 			color: 'white',
 		},
 		_hover: {
-			bg: useColorModeValue('teal.400', 'teal'),
+			bg: useColorModeValue('teal.400', 'gray.800'),
 			color: 'white',
 		},
 	}

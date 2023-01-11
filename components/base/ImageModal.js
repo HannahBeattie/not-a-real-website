@@ -85,7 +85,6 @@ export default function ImageViewer({ items }) {
 		mt: '-1rem',
 		ml: '-1rem',
 		icon: clickedIcon,
-		ariaLabel: 'next button',
 	}
 	const modelImgProps = {
 		fit: 'contain',
