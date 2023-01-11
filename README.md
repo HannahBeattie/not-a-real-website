@@ -28,14 +28,16 @@ Not-a-real-site is a Next.js application that demonstrates how a headless CMS ca
 
 2. Clone the repository and run npm install from your command line.
 
-3. Create a '.env.local' file in your cloned repository and use it to store your Contentful access tokens, id and key.
+3. Create a '.env.local' file in your cloned repository and use it to store your environment variables from Contentful
 
-    - ie.
+    - This is : Any access tokens, id and key, ie.
         - CONTENTFUL_SPACE_ID = YOUR_ID_GOES_HERE ect.
     - Your preview and access tokens will be used by graphql to query contentful
         - See: components/lib/api.js, line 10 & 11
 
 4. Run 'npm run dev' from your command line.
+
+# Note: To launch this site, you will have to provide your environment variables to whatever platform you use.
 
 ### Navagating the code
 
