@@ -34,7 +34,7 @@ export async function getAlbums() {
 			}
 		}`
 	)
-	console.log('getting fake albums : ', { album })
-	console.log('Got albums:', album)
+	// console.log('getting fake albums : ', { album })
+	// console.log('Got albums:', album)
 	return album?.data?.fakeAlbumCollection?.items ?? []
 }

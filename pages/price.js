@@ -4,7 +4,6 @@ import {
 	Heading,
 	HStack,
 	Icon,
-	Spacer,
 	Table,
 	Tbody,
 	Td,
@@ -13,8 +12,6 @@ import {
 	VStack,
 } from '@chakra-ui/react'
 import Head from 'next/head'
-import { AiOutlineCamera } from 'react-icons/ai'
-import { MdOutlineComputer } from 'react-icons/md'
 
 export default function Price() {
 	const services = [
@@ -23,7 +20,6 @@ export default function Price() {
 
 			services: [
 				{
-					icon: AiOutlineCamera,
 					servName: 'Service Name',
 					servPrice: '$300/hr',
 					description: 'Description',
@@ -35,7 +31,6 @@ export default function Price() {
 
 			services: [
 				{
-					icon: AiOutlineCamera,
 					servName: 'Service Name',
 					servPrice: '$300/hr',
 					description: 'Description',
@@ -47,7 +42,6 @@ export default function Price() {
 
 			services: [
 				{
-					icon: AiOutlineCamera,
 					servName: 'Service Name',
 					servPrice: '$300/hr',
 					description: 'Description',
@@ -59,7 +53,6 @@ export default function Price() {
 
 			services: [
 				{
-					icon: AiOutlineCamera,
 					servName: 'Service Name',
 					servPrice: '$300/hr',
 					description: 'Description',
@@ -71,7 +64,6 @@ export default function Price() {
 
 			services: [
 				{
-					icon: MdOutlineComputer,
 					servName: 'Service Name',
 					servPrice: '$300/hr',
 					description: 'Description',
@@ -83,7 +75,6 @@ export default function Price() {
 
 			services: [
 				{
-					icon: MdOutlineComputer,
 					servName: 'Service Name',
 					servPrice: '$300/hr',
 					description: 'Description',
@@ -95,7 +86,6 @@ export default function Price() {
 
 			services: [
 				{
-					icon: MdOutlineComputer,
 					servName: 'Service Name',
 					servPrice: '$300/hr',
 					description: 'Description',
@@ -146,7 +136,7 @@ export default function Price() {
 						{services.map((ss, idx) => {
 							const heading = <Heading size={'md'}>{ss.title}</Heading>
 							return ss.services
-								.map(({ description, servName, servPrice, icon, plus }, ii) => {
+								.map(({ description, servName, servPrice, plus }, ii) => {
 									rowNum += 1
 									const price = (
 										<HStack fontSize='sm' fontWeight={300} fontStyle='italic'>
@@ -193,7 +183,6 @@ export default function Price() {
 											)}
 											<Td>
 												<HStack alignItems='flex-start'>
-													<Icon mt='0.5' as={icon} color='green.500' />
 													<VStack alignItems='flex-start' spacing={1}>
 														<Text>{servName}</Text>
 														<Box
