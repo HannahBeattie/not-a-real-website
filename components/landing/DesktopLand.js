@@ -1,5 +1,5 @@
 import { Box, Spacer, Text, useColorModeValue, VStack } from '@chakra-ui/react'
-import Nav from '../header/MainNav'
+import Nav from '../header/DesktopNav'
 import ColTog from '../base/ToggleMode'
 import BigLogo from '../logo/BigLogo'
 

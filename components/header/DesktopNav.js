@@ -19,7 +19,7 @@ import { NAV_ITEMS } from './NavItems'
 import Zlogo from '../logo/SmLogo'
 import { SP } from 'next/dist/shared/lib/utils'
 
-export default function MainNav({ hideLogo, hideToggle, ...rest }) {
+export default function DesktopNav({ hideLogo, hideToggle, ...rest }) {
 	const stackProps = {
 		alignItems: 'stretch',
 		textTransform: 'uppercase',
@@ -45,7 +45,7 @@ export default function MainNav({ hideLogo, hideToggle, ...rest }) {
 			>
 				<Box>{!hideLogo && <Zlogo />}</Box>
 				<Spacer />
-				<DesktopNav />
+				<DesktopDisplNav />
 				<Spacer />
 				{!hideToggle && (
 					<Box pl='2'>
@@ -59,7 +59,7 @@ export default function MainNav({ hideLogo, hideToggle, ...rest }) {
 	)
 }
 
-const DesktopNav = () => {
+const DesktopDisplNav = () => {
 	return (
 		<HStack>
 			{NAV_ITEMS.map((navItem, idx) => (
@@ -70,17 +70,13 @@ const DesktopNav = () => {
 }
 
 const useNavLinkProps = () => {
-	const linkColor = useColorModeValue('gray.700', 'gray.200')
-	const linkHoverColor = useColorModeValue('orange.800', 'white')
 	return {
 		fontSize: 'sm',
 		fontWeight: 500,
-		color: linkColor,
 		px: '4',
 		py: '2',
 		_hover: {
 			textDecoration: 'none',
-			color: linkHoverColor,
 		},
 		textAlign: 'center',
 	}
@@ -110,6 +106,11 @@ const DesktopNavItem = ({ href, label, labelShort, children }) => {
 }
 
 const DesktopNavItemPopover = ({ href, label, children }) => {
+	const dropdownProps = {
+		boxShadow: 'inner',
+		alignItems: 'stretch',
+		p: 2,
+	}
 	const navLinkProps = useNavLinkProps()
 	return (
 		<Popover trigger={'hover'} placement={'bottom-start'}>
@@ -121,14 +122,7 @@ const DesktopNavItemPopover = ({ href, label, children }) => {
 
 			{children && (
 				<PopoverContent rounded={'md'} _dark={{ bg: 'gray.900', borderColor: 'gray.900' }}>
-					<VStack
-						boxShadow={'inner'}
-						alignItems='stretch'
-						spacing='0'
-						bg={'white'}
-						_dark={{ bg: 'blackAlpha.900' }}
-						rounded={'sm'}
-					>
+					<VStack {...dropdownProps}>
 						{children.map((child) => (
 							<DesktopSubNav rounded={'sm'} key={child.label} {...child} />
 						))}
@@ -140,29 +134,15 @@ const DesktopNavItemPopover = ({ href, label, children }) => {
 }
 
 const DesktopSubNav = ({ label, href }) => {
+	const linkProps = {
+		p: 1,
+		display: 'block',
+		_hover: { textDecoration: 'none', bg: useColorModeValue('grayAlpha.100', 'gray.800') },
+	}
 	return (
 		<>
-			<Link
-				href={href}
-				role={'group'}
-				display={'block'}
-				p={2}
-				rounded={'sm'}
-				px={4}
-				_hover={{
-					textDecoration: 'none',
-					bg: useColorModeValue('gray.200', 'gray.900'),
-				}}
-			>
-				<Text
-					rounded={'xl'}
-					transition={'all .3s ease'}
-					letterSpacing={'0.05em'}
-					fontSize={'sm'}
-					_groupHover={{ color: useColorModeValue('gray.900', 'white') }}
-				>
-					{label}
-				</Text>
+			<Link href={href} role={'group'} {...linkProps}>
+				{label}
 			</Link>
 		</>
 	)
