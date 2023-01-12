@@ -98,7 +98,10 @@ export default function About() {
 								<Heading fontWeight={'light'}>Source Code</Heading>
 								<Text fontWeight={'light'}>
 									You can view the source code{' '}
-									<MyLink textDecoration={'underline'} href={''}>
+									<MyLink
+										textDecoration={'underline'}
+										href={'https://github.com/HannahBeattie/not-a-real-website'}
+									>
 										here
 									</MyLink>
 									.
