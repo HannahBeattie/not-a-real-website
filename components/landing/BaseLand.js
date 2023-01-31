@@ -104,7 +104,7 @@ export default function BaseLand() {
 			<Nav hideLogo {...navDisplayProps} />
 
 			<VStack {...overLayProps}>
-				<Text {...mainTextProps}>Using Next.js & dynamic routs with a headless CMS</Text>
+				<Text {...mainTextProps}>Using Next.js & dynamic routes with a headless CMS</Text>
 
 				<FadeIn transition={{ duration: 1.3, delay: 0.6 }}>
 					<Button {...buttonProps} onClick={() => router.push('/about')}>
